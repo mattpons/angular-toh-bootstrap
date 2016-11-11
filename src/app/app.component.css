@@ -1,6 +1,46 @@
+#heroListSection {
+    margin-top: 25px;
+    padding-bottom: 15px;
+}
+
 #detailSection {
-    margin-top: 15px;
-    border-color: #ddd;
-    border-width: 1px;
-    border-radius: 4px;
+    margin-top: 25px;
+}
+
+#detailForm {
+    padding: 20px 15px;
+}
+
+.heroes button:hover {
+    left: 5px;
+}
+
+.form-group {
+    font-size: medium;
+}
+
+.list-group-item {
+    padding-left: 0px;
+}
+
+.list-group:last-child .list-group-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.input-wrapper {
+    padding: 10px 15px;
+    background-color: #f6f7f9;
+    border: 1px solid #e1e2e3;
+}
+
+.hero-badge {
+    margin-left: 5px;
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: large;
+    color: goldenrod;
+}
+
+.hero-name {
+    margin-left: 5px;
 }
