@@ -1,5 +1,6 @@
 <div class="row">
-    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
+    
+       <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
         <h2>My Heroes</h2>
         <div class="heroes list-group">
             <button class="list-group-item" *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
@@ -8,6 +9,8 @@
                 </button>
         </div>
     </section>
+
 </div>
+
 
 <app-hero-detail [hero]="selectedHero" (heroDeselected)="heroDeselected($event)"></app-hero-detail>
