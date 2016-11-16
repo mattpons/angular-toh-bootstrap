@@ -26,37 +26,7 @@
         </section>
     </div>
 
-    <div class="row" *ngIf="selectedHero">
-        <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="detailSection">
+    <app-hero-detail [hero]="selectedHero" (heroDeselected)="heroDeselected($event)"></app-hero-detail>
 
-            <form class="form-horizontal" id="detailForm">
-                <fieldset>
-                    <legend>
-                        {{selectedHero.name}} Details!
-                        <button type="button" class="close" title="Close" (click)="deSelectHero()">&times;</button>
-                    </legend>
-                    <div class="input-wrapper">
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="heroId">ID</label>
-                            <div class="col-sm-6 col-md-4">
-                                <p class="form-control-static" id="heroId">{{ selectedHero.id }}</p>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="heroName">Name</label>
-                            <div class="col-sm-6 col-md-4">
-                                <input class="form-control" type="text" id="heroName" name="heroName" [(ngModel)]="selectedHero.name">
-                            </div>
-                        </div>
-
-                    </div>
-                </fieldset>
-            </form>
-
-        </section>
-    </div>
-    <!-- row -->
 </div>
 <!-- content container -->

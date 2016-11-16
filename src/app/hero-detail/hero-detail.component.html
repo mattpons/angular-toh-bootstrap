@@ -1,0 +1,33 @@
+<div class="row" *ngIf="hero">
+    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="detailSection">
+
+        <form class="form-horizontal" id="detailForm">
+            <fieldset>
+                <legend>
+                    {{hero.name}} Details!
+                    <button type="button" class="close" title="Close" (click)="closeDetail()">&times;</button>
+                </legend>
+                <div class="input-wrapper">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="heroId">ID</label>
+                        <div class="col-sm-6 col-md-4">
+                            <p class="form-control-static" id="heroId">{{ hero.id }}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="heroName">Name</label>
+                        <div class="col-sm-6 col-md-4">
+                            <input class="form-control" type="text" id="heroName" name="heroName" [(ngModel)]="hero.name">
+                        </div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+
+    </section>
+
+</div>
+<!-- row -->

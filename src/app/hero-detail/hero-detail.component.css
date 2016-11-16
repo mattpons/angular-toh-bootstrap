@@ -1,0 +1,17 @@
+#detailSection {
+    margin-top: 25px;
+}
+
+#detailForm {
+    padding: 20px 15px;
+}
+
+.form-group {
+    font-size: medium;
+}
+
+.input-wrapper {
+    padding: 10px 15px;
+    background-color: #f6f7f9;
+    border: 1px solid #e1e2e3;
+}
