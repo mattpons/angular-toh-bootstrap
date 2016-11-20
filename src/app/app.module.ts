@@ -10,18 +10,26 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { AppRoutingModule }     from './app-routing.module';
 
 import { HeroFetchService } from './shared/hero-fetch.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { HolderjsDirective } from 'angular-2-holderjs/holderjs.directive';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         HeroDetailComponent,
-        HeroListComponent
+        HeroListComponent,
+        DashboardComponent,
+        HolderjsDirective
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        CarouselModule
     ],
     providers: [HeroFetchService],
     bootstrap: [AppComponent]

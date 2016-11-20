@@ -5,7 +5,7 @@
             <fieldset>
                 <legend>
                     {{hero.name}} Details!
-                    <button type="button" class="close" title="Close" (click)="closeDetail()">&times;</button>
+                    <button *ngIf="!isInDetail()" type="button" class="close" title="Close" (click)="closeDetail()">&times;</button>
                 </legend>
                 <div class="input-wrapper">
 
@@ -20,6 +20,12 @@
                         <label class="col-sm-2 control-label" for="heroName">Name</label>
                         <div class="col-sm-6 col-md-4">
                             <input class="form-control" type="text" id="heroName" name="heroName" [(ngModel)]="hero.name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2 col-md-4">
+                            <button class="btn btn-default" id="back" name="back" (click)="goBack()">Back</button>
                         </div>
                     </div>
 

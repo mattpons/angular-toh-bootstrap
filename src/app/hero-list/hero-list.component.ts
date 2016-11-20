@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { HeroFetchService } from '../shared/hero-fetch.service';
 import { Hero } from '../shared/hero.model';
@@ -18,14 +19,19 @@ export class HeroListComponent implements OnInit {
     heroes: Hero[];
     selectedHero: Hero;
 
-    constructor(private heroFetchService: HeroFetchService) { }
+    constructor(private heroFetchService: HeroFetchService, private router: Router) { }
 
     ngOnInit(): void {
         this.getHeroes();
     }
 
     getHeroes(): void {
-        this.heroes = this.heroFetchService.getHeroes();
+        this.heroFetchService.getHeroes()
+            .then(heroes => this.heroes = heroes);
+    }
+
+    gotoDetail(): void {
+        this.router.navigate(['/detail', this.selectedHero.id]);
     }
 
 

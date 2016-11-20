@@ -1,0 +1,19 @@
+<section class="panel col-xs-8 col-xs-offset-2">
+<h2 class="text-center">Top Heroes</h2>
+
+    <!--        <span class="col-xs-10 col-md-5 circle text-center large-icon" *ngFor="let hero of heroes"><span class="h5">{{ hero.name }}</span></span>-->
+
+    <div class="col-xs-10 col-xs-offset-1">
+        <carousel [interval]="myInterval" [noWrap]="noWrapSlides">
+      <slide *ngFor="let slide of slides"
+             [active]="slide.active">
+             <img [src]="slide.image">
+
+ 
+       
+      </slide>
+    </carousel>
+    </div>
+
+
+</section>
