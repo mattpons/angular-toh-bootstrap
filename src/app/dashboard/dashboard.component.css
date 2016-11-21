@@ -1,18 +1,46 @@
-.circle {
-  margin: 15px;
-  padding: 12.5% 0%;
-  border-radius: 50%;
-  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
-  background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+#title {
+    padding-bottom: 15px;
 }
 
-.circle:before {
-  padding: 50% 0;
+@media only screen and (min-width : 768px) {
+    .carousel-caption {
+        top: 20%;
+    }
 }
 
-.circle:first-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media only screen and (min-width : 992px) {
+    .carousel-caption {
+        top: 25%;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .carousel-caption {
+        top: 30%;
+    }
+}
+
+.carousel-indicators li {
+    border-color: #00b3fe;
+}
+
+
+.hero-name {
+    color: #eee;
+    padding-top: 10%;
+    padding-bottom: 30%;
+}
+
+.hero-name:hover {
+    transition: background-color .4s linear, color .4s linear;
+    -webkit-transition: background-color .4s linear, color .4s linear;
+    -moz-transition: background-color .4s linear, color .4s linear;
+    -o-transition: background-color .4s linear, color .4s linear;
+    -ms-transition: background-color .4s linear, color .4s linear;
+    color: #00b3fe;
+    cursor: pointer;
+}
+
+.dash-content {
+    padding-bottom: 15px;
 }
