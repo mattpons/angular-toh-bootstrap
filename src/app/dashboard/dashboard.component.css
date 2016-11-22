@@ -1,5 +1,5 @@
 #title {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 @media only screen and (min-width : 768px) {
@@ -24,9 +24,20 @@
     border-color: #00b3fe;
 }
 
+.hero-name-xs {
+    width: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: goldenrod;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin: 5% 0px;
+}
 
 .hero-name {
-    color: #eee;
+    color: #333;
     padding-top: 10%;
     padding-bottom: 30%;
 }
@@ -42,5 +53,5 @@
 }
 
 .dash-content {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }

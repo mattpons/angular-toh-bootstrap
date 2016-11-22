@@ -29,14 +29,18 @@ export class DashboardComponent implements OnInit {
         this.heroFetchService.getHeroes()
             .then((heroes) => {
                 this.heroes = heroes.slice(1, 5);
-                for (let hero of this.heroes) {
-                    this.slides.push({
-                        heroId: hero.id,
-                        image: `assets/images/star.svg`,
-                        text: `${hero.name}`
-                    });
-                }
+                this.prepCarousel();
             });
+    }
+
+    private prepCarousel() {
+        for (let hero of this.heroes) {
+            this.slides.push({
+                heroId: hero.id,
+                image: `assets/images/star.svg`,
+                text: `${hero.name}`
+            });
+        }
     }
 
     gotoDetail(slide): void {
