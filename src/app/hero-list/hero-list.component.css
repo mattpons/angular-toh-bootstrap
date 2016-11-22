@@ -1,0 +1,27 @@
+#heroListSection {
+    padding-bottom: 15px;
+}
+
+.heroes button:hover {
+    left: 5px;
+}
+
+.list-group-item {
+    padding-left: 0px;
+}
+
+.list-group:last-child .list-group-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.hero-badge {
+    margin-left: 5px;
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: large;
+    color: goldenrod;
+}
+
+.hero-name {
+    margin-left: 5px;
+}

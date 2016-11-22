@@ -2,31 +2,30 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule, Routes, Router } from '@angular/router';
 
-import { AppRoutingModule } from '../app-routing.module';
-import { HeroDetailComponent } from './hero-detail.component';
+import { DashboardComponent } from './dashboard.component';
 import { HeroFetchService } from '../shared/hero-fetch.service';
 
-xdescribe('HeroDetailComponent', () => {
-    let component: HeroDetailComponent;
-    let fixture: ComponentFixture<HeroDetailComponent>;
+describe('DashboardComponent', () => {
+    let component: DashboardComponent;
+    let fixture: ComponentFixture<DashboardComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [HeroDetailComponent],
+            declarations: [DashboardComponent],
              providers: [
-                ActivatedRoute,
+                RouterModule,
                 HeroFetchService
             ],
-            imports: [ FormsModule ]
+            imports: [ RouterTestingModule ]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(HeroDetailComponent);
+        fixture = TestBed.createComponent(DashboardComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

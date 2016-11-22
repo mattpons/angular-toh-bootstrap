@@ -1,0 +1,57 @@
+#title {
+    padding-bottom: 20px;
+}
+
+@media only screen and (min-width : 768px) {
+    .carousel-caption {
+        top: 20%;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    .carousel-caption {
+        top: 25%;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .carousel-caption {
+        top: 30%;
+    }
+}
+
+.carousel-indicators li {
+    border-color: #00b3fe;
+}
+
+.hero-name-xs {
+    width: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: goldenrod;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin: 5% 0px;
+}
+
+.hero-name {
+    color: #333;
+    padding-top: 10%;
+    padding-bottom: 30%;
+}
+
+.hero-name:hover {
+    transition: background-color .4s linear, color .4s linear;
+    -webkit-transition: background-color .4s linear, color .4s linear;
+    -moz-transition: background-color .4s linear, color .4s linear;
+    -o-transition: background-color .4s linear, color .4s linear;
+    -ms-transition: background-color .4s linear, color .4s linear;
+    color: #00b3fe;
+    cursor: pointer;
+}
+
+.dash-content {
+    padding-bottom: 20px;
+}

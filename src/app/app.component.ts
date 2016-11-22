@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { HeroFetchService } from './shared/hero-fetch.service';
-import { Hero } from './shared/hero.model';
-
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -11,30 +7,6 @@ import { Hero } from './shared/hero.model';
     styleUrls: ['./app.component.css']
 })
 
-
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'Bootstrap Heroes';
-
-    heroes: Hero[];
-    selectedHero: Hero;
-
-    constructor(private heroFetchService: HeroFetchService) { }
-
-    ngOnInit(): void {
-        this.getHeroes();
-    }
-
-    getHeroes(): void {
-        this.heroes = this.heroFetchService.getHeroes();
-    }
-
-
-    onSelect(hero: Hero): void {
-        this.selectedHero = hero;
-    }
-
-    heroDeselected(event): void {
-        this.selectedHero = event.deselected;
-    }
-
 }

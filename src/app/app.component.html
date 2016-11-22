@@ -1,32 +1,39 @@
-<header>
+<!--<header>
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <span class="navbar-brand">{{ title }}</span>
             </div>
-            <!--        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#mission">Coming Soon...</a></li>
-        </ul>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+            </ul>
         </div>
-        <!-- container -->
+    
     </nav>
-</header>
+</header>-->
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" routerLink="/" >{{ title }}</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav">
+              <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+            <li routerLinkActive="active"><a routerLink="/heroes">Heroes</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
 
 <div class="container">
-
-    <div class="row">
-        <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
-            <h2>My Heroes</h2>
-            <div class="heroes list-group">
-                <button class="list-group-item" *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
-                    <span class="glyphicon glyphicon-star hero-badge"></span>
-                    <span class="h4 hero-name">{{hero.name}}</span>
-                </button>
-            </div>
-        </section>
-    </div>
-
-    <app-hero-detail [hero]="selectedHero" (heroDeselected)="heroDeselected($event)"></app-hero-detail>
-
+    <router-outlet></router-outlet>
 </div>
-<!-- content container -->

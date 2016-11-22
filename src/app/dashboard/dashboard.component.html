@@ -1,0 +1,32 @@
+<section class="panel col-xs-8 col-xs-offset-2">
+    <h1 class="text-center" id="title">Top Heroes</h1>
+
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="dash-content">
+
+            <a class="btn btn-info list-group-item visible-xs hero-name-xs" *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]">
+                <div>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="h4">{{ hero.name }}</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </div>
+            </a>
+
+
+            <carousel class="hidden-xs" [interval]="slideInterval" [noWrap]="noWrapSlides">
+                <slide *ngFor="let slide of slides" [active]="slide.active">
+
+                    <img [src]="slide.image" class="img-responsive">
+                    <div class="carousel-caption">
+                        <div class="hero-name" (click)="gotoDetail(slide)">
+                            <h2>{{ slide.text }}</h2>
+                        </div>
+                    </div>
+                </slide>
+            </carousel>
+
+        </div>
+    </div>
+
+
+</section>

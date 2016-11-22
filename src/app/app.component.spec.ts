@@ -1,6 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { AppComponent } from './app.component';
 
 describe('App: AngularTohBootstrap', () => {
@@ -9,6 +11,10 @@ describe('App: AngularTohBootstrap', () => {
             declarations: [
                 AppComponent
             ],
+             providers: [
+                RouterModule
+            ],
+            imports: [ RouterTestingModule ]
         });
     });
 
@@ -28,6 +34,6 @@ describe('App: AngularTohBootstrap', () => {
         let fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         let compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h1').textContent).toContain('Bootstrap Heroes');
+        expect(compiled.querySelector('a').textContent).toContain('Bootstrap Heroes');
     }));
 });

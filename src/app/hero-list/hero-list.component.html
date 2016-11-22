@@ -1,0 +1,23 @@
+<div class="row">
+
+    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
+        <h2>My Heroes</h2>
+        <div class="heroes list-group">
+            <button class="list-group-item" *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
+                    <span class="glyphicon glyphicon-star hero-badge"></span>
+                    <span class="h4 hero-name">{{ hero.name }}</span>
+                </button>
+        </div>
+    </section>
+
+</div>
+
+<div class="row" *ngIf="selectedHero">
+    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
+        <div class="text-center">
+            <h3>{{ selectedHero.name }} <span class="text-muted">Is My Hero</span></h3>
+            <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+        </div>
+    </section>
+</div>
+<!--<app-hero-detail [hero]="selectedHero" (heroDeselected)="heroDeselected($event)"></app-hero-detail>-->
