@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { HeroFetchService } from '../shared/hero-fetch.service';
 import { Hero } from '../shared/hero.model';
 
-import { HolderjsDirective } from 'angular-2-holderjs/holderjs.directive';
-
 
 @Component({
     selector: 'app-dashboard',
