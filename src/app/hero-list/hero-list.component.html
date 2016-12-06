@@ -1,7 +1,26 @@
 <div class="row">
 
-    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
-        <h2>My Heroes</h2>
+    <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection" *ngIf="heroes">
+
+        <h2 class="text-center">
+            <span>My Heroes</span>
+            <a class="btn btn-success btn-sm pull-right" title="Add new hero" (click)="toggleAddHero()">
+                <span [ngClass]="['glyphicon', !showAddHero
+                                 ? 'glyphicon-plus'
+                                 : 'glyphicon-minus']"></span>
+            </a>
+        </h2>
+
+
+        <div class="form-group col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2" *ngIf="showAddHero">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter new hero name..." #heroName />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" (click)="add(heroName.value); heroName.value=''">Add Hero</button>
+                </span>
+            </div>
+        </div>
+
         <div class="heroes list-group">
             <button class="list-group-item" *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
                     <span class="glyphicon glyphicon-star hero-badge"></span>
@@ -15,9 +34,12 @@
 <div class="row" *ngIf="selectedHero">
     <section class="panel col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3" id="heroListSection">
         <div class="text-center">
-            <h3>{{ selectedHero.name }} <span class="text-muted">Is My Hero</span></h3>
-            <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+            <legend>
+                <button type="button" class="close pull-right" title="Close" (click)="closeDetail()">&times;</button>
+                <h3>{{ selectedHero.name }} <span class="text-muted">Is My Hero</span></h3>
+            </legend>
+            <a class="btn btn-theme" (click)="gotoDetail()">View Details</a>
+            <a class="btn btn-danger" (click)="delete(selectedHero); $event.stopPropagation()">Delete {{ selectedHero.name }}</a>
         </div>
     </section>
 </div>
-<!--<app-hero-detail [hero]="selectedHero" (heroDeselected)="heroDeselected($event)"></app-hero-detail>-->

@@ -42,6 +42,11 @@ export class HeroDetailComponent implements OnInit {
         return (this.location.path().indexOf('/detail') === 0);
     }
 
+    save(): void {
+        this.heroFetchService.update(this.hero)
+            .then(() => this.goBack());
+    }
+
     goBack(): void {
         this.location.back();
     }
