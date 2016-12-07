@@ -1,0 +1,16 @@
+<div class="well" id="search-component">
+
+  <div class="form-group has-feedback">
+    <label class="control-label" for="searchBox">Hero Search</label>
+    <input type="text" class="form-control" autocomplete="off" #searchBox id="searchBox" (keyup)="search(searchBox.value)" />
+    <i class="form-control-feedback glyphicon glyphicon-search"></i>
+  </div>
+
+
+  <div class="search-result list-group">
+    <a class="list-group-item" *ngFor="let hero of heroes | async | slice:0:maxResults" (click)="gotoDetail(hero)">
+      <span>{{hero.name}}</span>
+    </a>
+  </div>
+
+</div>

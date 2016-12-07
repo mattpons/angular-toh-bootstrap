@@ -6,17 +6,29 @@
     .carousel-caption {
         top: 20%;
     }
+
+    .dash-content {
+        padding-top: 50px;
+    }
 }
 
 @media only screen and (min-width : 992px) {
     .carousel-caption {
         top: 25%;
     }
+
+    .dash-content {
+        padding-top: 80px;
+    }
 }
 
 @media only screen and (min-width : 1200px) {
     .carousel-caption {
         top: 30%;
+    }
+
+    .dash-content {
+        padding-top: 80px;
     }
 }
 
