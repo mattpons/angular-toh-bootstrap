@@ -1,12 +1,18 @@
 .navbar {
     margin-bottom: 45px;
+    border-radius: 0px;
+}
+
+#main {
+    padding-bottom: 77px;
 }
 
 #footerwrap {
    width: 100%;
    padding-top: 25px;
-   padding-bottom: 25px;
+   padding-bottom: 30px;
    background: #384452;
-   position: absolute;
-   bottom: 0px;
+   margin:0;
+   position: relative;
+   bottom: 0;
 }
