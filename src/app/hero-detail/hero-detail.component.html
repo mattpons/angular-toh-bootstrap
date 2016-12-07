@@ -7,24 +7,25 @@
                     {{hero.name}} Details!
                     <button *ngIf="!isInDetail()" type="button" class="close" title="Close" (click)="closeDetail()">&times;</button>
                 </legend>
-                <div class="input-wrapper">
+                <div class="well input-wrapper">
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="heroId">ID</label>
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-5">
                             <p class="form-control-static" id="heroId">{{ hero.id }}</p>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="heroName">Name</label>
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-5">
                             <input class="form-control" type="text" id="heroName" name="heroName" [(ngModel)]="hero.name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-6 col-sm-offset-2 col-md-4">
+                        <div class="col-sm-6 col-sm-offset-2 col-md-5">
+                            <button class="btn btn-primary" id="save" (click)="save()">Save</button>
                             <button class="btn btn-default" id="back" name="back" (click)="goBack()">Back</button>
                         </div>
                     </div>

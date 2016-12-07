@@ -2,18 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
+import { InMemoryDataService } from './shared/in-memory-data.service';
 import { HeroFetchService } from './shared/hero-fetch.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { HolderjsDirective } from 'angular-2-holderjs/holderjs.directive';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 
 @NgModule({
@@ -22,12 +26,13 @@ import { HolderjsDirective } from 'angular-2-holderjs/holderjs.directive';
         HeroDetailComponent,
         HeroListComponent,
         DashboardComponent,
-        HolderjsDirective
+        HeroSearchComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService),
         AppRoutingModule,
         CarouselModule
     ],

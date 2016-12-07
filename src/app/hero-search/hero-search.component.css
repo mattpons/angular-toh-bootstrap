@@ -1,0 +1,18 @@
+.search-result {
+  z-index: 1000;
+  position: absolute;
+}
+
+.search-result a:hover {
+    transition: background-color .4s linear, color .4s linear;
+    -webkit-transition: background-color .4s linear, color .4s linear;
+    -moz-transition: background-color .4s linear, color .4s linear;
+    -o-transition: background-color .4s linear, color .4s linear;
+    -ms-transition: background-color .4s linear, color .4s linear;
+    color: #00b3fe;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
