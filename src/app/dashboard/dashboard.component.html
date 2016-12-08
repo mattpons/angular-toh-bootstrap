@@ -1,13 +1,14 @@
 <section class="panel col-xs-8 col-xs-offset-2">
     <h1 class="text-center" id="title">Top Heroes</h1>
 
-        <div class="col-xs-10 col-xs-offset-1">
-            <hero-search></hero-search>
-        </div>
-   
+    <div class="col-xs-10 col-xs-offset-1" *ngIf="heroes">
+        <hero-search></hero-search>
+    </div>
+
 
     <div class="col-xs-10 col-xs-offset-1">
         <div class="dash-content">
+
 
             <a class="btn btn-info list-group-item visible-xs hero-name-xs" *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]">
                 <div>

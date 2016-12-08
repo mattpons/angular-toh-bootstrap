@@ -15,6 +15,7 @@ import { Hero } from '../shared/hero.model';
 export class DashboardComponent implements OnInit {
 
     heroes: Hero[] = [];
+    errorMessage: any;
     public slideInterval: number = 2000;
     public noWrapSlides: boolean = false;
     public slides: Array<any> = [];
@@ -24,11 +25,18 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.getHeroes();
+    }
+
+    private getHeroes() {
         this.heroFetchService.getHeroes()
-            .then((heroes) => {
-                this.heroes = heroes.slice(0, 4);
-                this.prepCarousel();
-            });
+            .subscribe((heroes) => {
+                if (heroes.length) {
+                    this.heroes = heroes.slice(0, 4);
+                    this.prepCarousel();
+                }
+            },
+            error => this.errorMessage = <any>error);
     }
 
     private prepCarousel() {

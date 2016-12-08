@@ -43,8 +43,8 @@ export class HeroDetailComponent implements OnInit {
     }
 
     save(): void {
-        this.heroFetchService.update(this.hero)
-            .then(() => this.goBack());
+        this.heroFetchService.updateHero(this.hero)
+            .subscribe(() => this.goBack());
     }
 
     goBack(): void {

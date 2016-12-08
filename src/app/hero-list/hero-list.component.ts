@@ -19,6 +19,7 @@ export class HeroListComponent implements OnInit {
     heroes: Hero[];
     selectedHero: Hero;
     showAddHero: boolean = false;
+    errorMessage: any;
 
     constructor(private heroFetchService: HeroFetchService, private router: Router) { }
 
@@ -31,30 +32,37 @@ export class HeroListComponent implements OnInit {
         name = name.trim();
         if (!name) { return; }
         this.heroFetchService
-            .create(name)
-            .then((hero) => {
+            .addHero(name)
+            .subscribe((hero) => {
                 this.heroes.push(hero);
                 this.selectedHero = null;
                 this.toggleAddHero();
-            });
+            },
+            error => this.errorMessage = <any>error);
+
     }
 
     delete(hero: Hero): void {
         this.heroFetchService
-            .delete(hero.id)
-            .then(() => {
+            .deleteHero(hero.id)
+            .subscribe(() => {
                 this.heroes = this.heroes.filter(h => h !== hero);
-                if (this.selectedHero === hero) { this.selectedHero = null; }
-            });
+                if (this.selectedHero === hero) {
+                    this.selectedHero = null;
+                }
+            },
+            error => this.errorMessage = <any>error);
     }
 
     toggleAddHero(): void {
         this.showAddHero = !this.showAddHero;
     }
 
-    getHeroes(): void {
+    getHeroes() {
         this.heroFetchService.getHeroes()
-            .then(heroes => this.heroes = heroes);
+            .subscribe(
+            heroes => this.heroes = heroes,
+            error => this.errorMessage = <any>error);
     }
 
     closeDetail(): void {
