@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
     ngOnInit(): void {
         this.heroFetchService.getHeroes()
             .then((heroes) => {
-                this.heroes = heroes.slice(1, 5);
+                this.heroes = heroes.slice(0, 4);
                 this.prepCarousel();
             });
     }
